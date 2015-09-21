@@ -30,6 +30,17 @@ app.get('/blog/:title?', function(req, res){
 	}
 });
 
+app.get('/user', function(req, res){
+    //var path = req.path;
+    //res.locals.path = path;
+    res.render('user');
+});
+
+app.get('/login', function(req, res){
+    res.render('login');
+});
+
+
 app.listen(3000, function() {
 	console.log("The frontend server is running on port 3000!");
 });

@@ -1,0 +1,10 @@
+extends ./layout.jade
+block content
+    link(rel='stylesheet', href='/static/css/form.css', type='text/css')
+    link(rel='stylesheet', href='/static/css/creative.css', type='text/css')
+    .container
+        form.form-signin(action="/login", method="post")
+            h2.form-signin-heading Please sign in
+            input.input-block-level(type="text", name="username", placeholder="Email address")
+            input.input-block-level(type="password", name="password", placeholder="Password")
+            button.btn.btn-large.btn-primary(type="submit") Sign in

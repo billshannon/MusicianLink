@@ -1,0 +1,53 @@
+extends ./layout.jade
+
+block content
+    link(rel='stylesheet', href='/static/css/creative.css', type='text/css')
+    link(rel='stylesheet', href='/static/css/form.css', type='text/css')
+    form.form-horizontal(action='/signup', method='post')
+        h1 Sign Up
+        fieldset
+            legend
+                span.number 1
+                |  Your info
+            input#name(type='text', name='user_name', placeholder="Name")
+            input#mail(type='email', name='user_email',placeholder="Email address")
+            input#phone(type='tel', name='user_phone',placeholder="Phone")
+            input#password(type='password', name='user_password', placeholder="Password")
+        fieldset
+            legend
+                span.number 2
+                |  Your profile
+            textarea#bio(name='user_bio', placeholder="Biography")
+            select#instrument(name='user_instrument')
+                option(value='', disabled='', selected='')  -- select an instrument --
+                option(value='guitar')
+                    | Guitar
+                option(value='bass')
+                    | Bass
+                option(value='drums')
+                    | Drums
+                option(value='vocals')
+                    | Vocals
+                option(value='keyboards')
+                    | Keyboards
+                option(value='horns')
+                    | Horns
+            label Styles:
+            input#funk(type='checkbox', value='styles_funk', name='user_style')
+            label.light(for='funk') Funk
+            br
+            input#reggae(type='checkbox', value='styles_reggae', name='user_style')
+            label.light(for='reggae') Reggae
+            br
+            input#rock(type='checkbox', value='styles_rock', name='user_style')
+            label.light(for='rock') Rock
+            br
+            input#blues(type='checkbox', value='styles_blues', name='user_style')
+            label.light(for='blues') Blues
+            br
+            input#pop(type='checkbox', value='styles_pop', name='user_style')
+            label.light(for='pop') Pop
+            br
+            input#jazz(type='checkbox', value='styles_jazz', name='user_style')
+            label.light(for='jazz') Jazz
+        button(type='submit' class='btn btn-primary btn-xl page-scroll' ) Sign Up
